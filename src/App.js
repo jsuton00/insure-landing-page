@@ -1,25 +1,77 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useToggle } from './hooks/useToggle';
+import { useViewportContext } from './hooks/useViewport';
+import HomePage from './pages/HomePage';
+import HowWeWorkPage from './pages/HowWeWorkPage';
+import BlogPage from './pages/BlogPage';
+import ViewPlanPage from './pages/ViewPlanPage';
+import AccountPage from './pages/AccountPage';
 
-function App() {
+const App = () => {
+  const [width] = useViewportContext();
+  const [isOpen, handleToggle, handleClose] = useToggle();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              width={width}
+              isOpen={isOpen}
+              handleToggle={handleToggle}
+              handleClose={handleClose}
+            />
+          }
+        />
+        <Route
+          path="/howWeWork"
+          element={
+            <HowWeWorkPage
+              width={width}
+              isOpen={isOpen}
+              handleToggle={handleToggle}
+              handleClose={handleClose}
+            />
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <BlogPage
+              width={width}
+              isOpen={isOpen}
+              handleToggle={handleToggle}
+              handleClose={handleClose}
+            />
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <AccountPage
+              width={width}
+              isOpen={isOpen}
+              handleToggle={handleToggle}
+              handleClose={handleClose}
+            />
+          }
+        />
+        <Route
+          path="/plan"
+          element={
+            <ViewPlanPage
+              width={width}
+              isOpen={isOpen}
+              handleToggle={handleToggle}
+              handleClose={handleClose}
+            />
+          }
+        />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

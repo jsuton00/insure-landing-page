@@ -1,0 +1,27 @@
+.nav-item {
+	width: 100%;
+	&-link {
+		padding: $spacing-sm $spacing-base;
+		cursor: pointer;
+
+    &-plan{
+      border: $spacing-secondary solid $veryDarkViolet;
+      
+      .nav-item-text{
+        color: $veryDarkViolet;
+        font-weight: $karla-bold;
+      }
+
+    }
+	}
+	&-text {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: $spacing-sm;
+		width: 100%;
+		font-size: $font-size-lg;
+		color: $darkGrayishViolet;
+		text-transform: uppercase;
+	}}

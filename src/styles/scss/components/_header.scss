@@ -1,0 +1,40 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 4rem;
+	padding: $spacing-base;
+	margin: 0 auto;
+
+	&-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	&-navbar-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		gap: $spacing-base;
+		width: 100%;
+	}
+}
+
+@media (max-width: 992px) {
+	.header-navmenu-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		transform: translateY(-29%);
+		margin: 0 auto;
+	}
+}
